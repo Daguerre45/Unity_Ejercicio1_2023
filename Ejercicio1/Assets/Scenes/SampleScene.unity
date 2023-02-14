@@ -1228,8 +1228,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373ccfdca2912d54aabbf378d12ec634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  feedbackMaterial: {fileID: 0}
+  player: {fileID: 1035018492}
+  feedbackMaterial: {fileID: 2100000, guid: ca2c9f9b6a2e7f64993f28214912cded, type: 2}
+  DoSnap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1102717027}
+        m_TargetAssemblyTypeName: SnapZOne, Assembly-CSharp
+        m_MethodName: SnapMoneda
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &594413400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1282,7 +1297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594413398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.79, z: 0}
+  m_LocalPosition: {x: 0, y: 1.203, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1639,6 +1654,11 @@ MonoBehaviour:
   m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 07a13c8ce6a1a47459983b55b6818f1b, type: 2}
+--- !u!1 &776198409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 00718395eefb6084bb25555f962f25c0, type: 3}
+  m_PrefabInstance: {fileID: 1721628241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &787375967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00718395eefb6084bb25555f962f25c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.79
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00718395eefb6084bb25555f962f25c0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2369,35 +2389,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 00718395eefb6084bb25555f962f25c0, type: 3}
   m_PrefabInstance: {fileID: 1102717024}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1102717026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102717025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df5b7091655ea2e41a5462d670b1a92f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  feedbackMaterial: {fileID: 0}
-  DoSnap:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1102717027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2410,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56b6c71271955340b6edb414dff8f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedsToSnap: {fileID: 0}
+  monedsToSnap: {fileID: 594413398}
 --- !u!136 &1102717028
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2419,7 +2410,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102717025}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.0000006
   m_Height: 2
@@ -3484,6 +3475,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 00718395eefb6084bb25555f962f25c0, type: 3}
   m_PrefabInstance: {fileID: 1721628241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721628255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776198409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5b7091655ea2e41a5462d670b1a92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1035018492}
+  feedbackMaterial: {fileID: 2100000, guid: ca2c9f9b6a2e7f64993f28214912cded, type: 2}
 --- !u!1 &1763019990
 GameObject:
   m_ObjectHideFlags: 0
