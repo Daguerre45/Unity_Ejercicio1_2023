@@ -7,7 +7,7 @@ public class Grab : MonoBehaviour
 {
     private bool isGrab = false;
     public Transform player;
-    private Transform objeto;
+    //private Transform objeto;
     private Material myMaterial; //Guardo el material del objeto por defecto
     public Material feedbackMaterial;
     private bool isRealesed = false;
@@ -31,13 +31,13 @@ public class Grab : MonoBehaviour
                 OnSelected();
             }
 
-        }else if(distance > 1 && !isGrab)
+        }else if(distance < 1 && !isGrab && isRealesed)
         {
             //Dejo de dar feedback
             OnUnHover();
         }
 
-        if(isGrab && !Input.GetKey(KeyCode.E))
+        if(distance < 1 && !Input.GetKey(KeyCode.E))
         {
             //Suelto el Objeto
             OnReleased();
@@ -58,7 +58,7 @@ public class Grab : MonoBehaviour
     {
         
         this.transform.parent = player; //Paso la moneda al jugador, es decir lo emparento al jugador
-        this.transform.localPosition = new Vector3(0, 1, 1.0f); //Para que exista una distancia entre el juagdo y la moneda
+        this.transform.localPosition = new Vector3(0, 0, -0.2f); //Para que exista una distancia entre el juagdo y la moneda
         this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().useGravity = false; // lo sobreescribo por si lo velvo a coger q vuelva a no usar gravedad
         isGrab = true;
@@ -67,7 +67,6 @@ public class Grab : MonoBehaviour
     private void OnReleased()
     {
         this.transform.parent = null;
-        isGrab = false;
         this.GetComponent<Rigidbody>().isKinematic = false;
         this.GetComponent<Rigidbody>().useGravity = true; //Para que cuando lo suelte se caiga al suelo
 

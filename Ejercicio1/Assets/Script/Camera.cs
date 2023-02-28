@@ -14,7 +14,7 @@ public class Camera : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") != 0) //Devuelve 1 si es la positiva (D y flecha derecha), Devuelve -1 en caso contrario y 0 si no se pulsa nada
         {
-            transform.Translate(Input.GetAxis("Horizontal") * 0.1f, 0, 0);
+            transform.Translate(Input.GetAxis("Horizontal")*0.1f, 0, 0);
         }
 
     }

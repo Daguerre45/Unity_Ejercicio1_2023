@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AgentPatron : MonoBehaviour
 {
     private NavMeshAgent agente;
+    public GameObject agente2;
     public Transform[] destinos;
     int i = 0;
 
@@ -28,13 +29,14 @@ public class AgentPatron : MonoBehaviour
     
     private void AsignarDestino()
     {
-        if (i == destinos.Length)
+        /*if (i == destinos.Length)
         {
             i = 0;
         }
             
         agente.destination = destinos[i].position; //Ojo al ser un array de trnasforms hay que asignarle siempre una posición
-        i++;
+        i++;*/
+        agente.destination = agente2.transform.position;
 
     }
 }
